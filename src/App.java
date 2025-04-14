@@ -2,22 +2,22 @@ import java.util.Scanner;
 
 public class App {
     public static void main(String[] args) throws Exception {
-        int[] numeros = {10, 20, 30, 40, 50};
+        int[] numeros = new int[20];
+
+        for (int i = 0; i < numeros.length; i++) {
+            numeros[i] = i + 1;
+        }
 
         Scanner sc = new Scanner(System.in);
         MetodosBusqueda bL = new MetodosBusqueda();
-        System.out.print("Ingrese el número a buscar: ");
+        System.out.print("Ingrese el número a buscar (del 1 al 20): ");
         int valor = sc.nextInt();
 
-        // Llamada al método de la otra clase
-        int posicion = bL.busquedaLineal(numeros, valor);
-
-        if (posicion != -1) {
-            System.out.println("Número encontrado en la posición: " + posicion);
+        if (bL.busquedaLineal(numeros, valor) != -1) {
+            System.out.println("El número buscado esta en la pocision: " + bL.busquedaLineal(numeros, valor));
         } else {
-            System.out.println("Número no encontrado.");
+            System.out.println("Error 404. Número no encontrado.");
         }
 
-        sc.close();
     }
 }
