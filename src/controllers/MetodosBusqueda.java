@@ -46,4 +46,17 @@ public class MetodosBusqueda {
             showConsole.showMessage("Personano encontrada");
         }
     }
+    public int findPersonByName(String name) {
+        return -1;s
+    }
+    public void showPersonByName() {
+        String nameToFind = showConsole.inputName();
+        int indexPerson = findPersonByName(nameToFind);
+        if (indexPerson >= 0) {
+            showConsole.showMessage("Persona con nombre: " + nameToFind + ", Encontrado");
+            showConsole.showMessage(people[indexPerson].toString());
+        } else {
+            showConsole.showMessage("Persona no encontrada");
+        }
+    }
 }
